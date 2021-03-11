@@ -19,4 +19,10 @@ const kidsWithCandies = (candies, extraCandies) => {
   return candiesArr
 }
 
+// Solution #2
+const kidsWithCandies = (candies, extraCandies) => {
+    const highestCandies = Math.max(...candies)
+    return candies.map(count => count + extraCandies >= highestCandies)
+}
+
 console.log(kidsWithCandies(candiesArr, extraCandiesInt))
