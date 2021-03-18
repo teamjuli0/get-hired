@@ -1,44 +1,31 @@
-// create a starter array
-// loop through nth amount of times to define each line
-// inside of loop, create new array of pascals to push into original array (nested array)
-// return nested array at nth index
+const newLine = (line) => {
+  const newLineDone = []
+  line.forEach((num, i) => {
+    if (i === 0) {
+      newLineDone.push(num)
+    }
+    if (i !== line.length - 1) {
+      newLineDone.push(num + line[i + 1])
+    } else {
+      newLineDone.push(1)
+    }
+  })
 
-;`
-    1
-   1 1
-  1 2 1
- 1 3 3 1
-1 4 6 4 1 
-`
-
-// -------------------------------------------------------------------------------------
-// UNFINISHED/WORK IN PROGRESS
-// -------------------------------------------------------------------------------------
+  return newLineDone
+}
 
 const pascal = (nth) => {
   const triangle = []
 
   for (let i = 0; i < nth; i++) {
-    const newLine = []
-
-    if (triangle[i] === 0) {
-      triangle.push([1], [1, 1])
-      i++
+    if (i === 0) {
+      triangle.push([1])
     } else {
-      console.log(triangle[i - 1])
-      for (let j = 0; j < triangle[i -1].length; i++) {
-        if (j === triangle[i].length || j === 0) {
-          newLine.push(1)
-        } else {
-          newLine.push(triangle[i -1][j] + triangle[i -1][j + 1])
-        }
-      }
-      triangle.push(newLine)
+      triangle.push(newLine(triangle[i - 1]))
     }
   }
 
-  console.log(triangle)
-  return triangle[nth]
+  return triangle[nth - 1]
 }
 
 console.log(pascal(6))
