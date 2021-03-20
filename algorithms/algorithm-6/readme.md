@@ -1,36 +1,64 @@
 # Algorithm
 
-Define a Function that Returns the nth Line of Pascal's Triangle
+You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.
+
+You may assume the two numbers do not contain any leading zero, except the number 0 itself.
 
 # Examples
 
-## Example 1: 
+## Example 1:
+
 Input:
 
 ```javascript
-    1
-   1 1
-  1 2 1
- 1 3 3 1
+const l1 = [2, 4, 3]
+const l2 = [5, 6, 4]
 ```
 
 Output:
 
 ```javascript
-1 4 6 4 1
+output = [7, 0, 8]
 ```
 
 Explanation:
 
 ```
-Each element of each row is either 1 or the sum of the two elements right above it which makes the soloution here 
-1 4 6 4 1
+342 + 465 = 807
+```
+
+## Example 2:
+
+Input:
+
+```javascript
+const l1 = [0]
+const l2 = [0]
+```
+
+Output:
+
+```javascript
+output = [0]
+```
+
+## Example 3:
+
+Input:
+
+```javascript
+const l1 = [9, 9, 9, 9, 9, 9, 9]
+const l2 = [9, 9, 9, 9]
+```
+
+Output:
+
+```javascript
+output = [8, 9, 9, 9, 0, 0, 0, 1]
 ```
 
 # Constraints
-    m == accounts.length
-    n == accounts[i].length
-    1 <= m, n <= 50
-    1 <= accounts[i][j] <= 100
 
-
+    The number of nodes in each linked list is in the range [1, 100].
+    0 <= Node.val <= 9
+    It is guaranteed that the list represents a number that does not have leading zeros.

@@ -4,7 +4,8 @@ Define a Function that Returns the nth Line of Pascal's Triangle
 
 # Examples
 
-## Example 1: 
+## Example 1:
+
 Input:
 
 ```javascript
@@ -23,14 +24,6 @@ Output:
 Explanation:
 
 ```
-Each element of each row is either 1 or the sum of the two elements right above it which makes the soloution here 
+Each element of each row is either 1 or the sum of the two elements right above it which makes the soloution here
 1 4 6 4 1
 ```
-
-# Constraints
-    m == accounts.length
-    n == accounts[i].length
-    1 <= m, n <= 50
-    1 <= accounts[i][j] <= 100
-
-
