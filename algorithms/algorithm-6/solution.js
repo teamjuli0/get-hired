@@ -1,7 +1,3 @@
-// ====================================================
-// Unfinished Algorithm
-// ====================================================
-
 const addTwoNumbers = function (l1, l2) {
   let remainder = 0
   let totalLength = l1.length > l2.length ? l1.length : l2.length
@@ -9,8 +5,28 @@ const addTwoNumbers = function (l1, l2) {
   const newArr = []
 
   for (let i = 0; i < totalLength; i++) {
-    if (l1[i] !== null && l2[i] !== null) {
+    if (l1[i] !== undefined && l2[i] !== undefined) {
       let newNum = (l1[i] + l2[i] + remainder).toString()
+
+      if (newNum.length === 1) {
+        remainder = 0
+        newArr.push(Number(newNum))
+      } else {
+        remainder = Number(newNum[0])
+        newArr.push(Number(newNum[1]))
+      }
+    } else if (l1[i] === undefined) {
+      let newNum = (l2[i] + remainder).toString()
+
+      if (newNum.length === 1) {
+        remainder = 0
+        newArr.push(Number(newNum))
+      } else {
+        remainder = Number(newNum[0])
+        newArr.push(Number(newNum[1]))
+      }
+    } else if (l2[i] === undefined) {
+      let newNum = (l1[i] + remainder).toString()
 
       if (newNum.length === 1) {
         remainder = 0
