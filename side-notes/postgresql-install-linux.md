@@ -27,5 +27,5 @@ sudo systemctl start postgresql && sudo systemctl enable postgresql
 Step 5)
 
 ```zsh
-echo "alias initpsql=\"sudo su - postgres\"" >> ~/.zshrc && source ~/.zshrc
+echo "alias psql=\"sudo -u postgres psql postgres\"" >> ~/.zshrc && source ~/.zshrc
 ```
